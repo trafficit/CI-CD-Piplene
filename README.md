@@ -19,18 +19,18 @@ This project demonstrates a production-ready FastAPI application with CI/CD pipe
 - FastAPI · Uvicorn · Docker · GitHub Actions · Telegram Bot API · systemd · Caddy
 
 ##  Project Structure
-fastapi-ci-demo/ 
-├── app/ 
-│ └── main.py 
-├── bot/ 
-│ └── bot.py 
-├── requirements.txt 
-├── Dockerfile 
-├── docker-compose.yml 
-├── .env.example 
-└── .github/ 
-└── workflows/ 
-└── deploy.yml
+  fastapi-ci-demo/ 
+  ├── app/ 
+  │ └── main.py 
+  ├── bot/ 
+  │ └── bot.py 
+  ├── requirements.txt 
+  ├── Dockerfile 
+  ├── docker-compose.yml 
+  ├── .env.example 
+  └── .github/ 
+  └── workflows/ 
+  └── deploy.yml
 
 
 ##  CI/CD Pipeline
