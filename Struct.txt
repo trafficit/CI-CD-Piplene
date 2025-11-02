@@ -1,0 +1,10 @@
+fastapi-ci-demo/
+├── app/
+│   └── main.py
+├── requirements.txt
+├── .env.example
+├── Dockerfile
+├── docker-compose.yml
+└── .github/
+    └── workflows/
+        └── deploy.yml

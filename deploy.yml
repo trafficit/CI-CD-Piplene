@@ -1,0 +1,44 @@
+name: CI/CD FastAPI Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          echo "No tests yet, but pipeline works."
+
+      - name: Build Docker image
+        run: |
+          docker build -t fastapi-ci-demo .
+
+      - name: Create .env file
+        run: |
+          echo "TG_TOKEN=${{ secrets.TG_TOKEN }}" >> .env
+          echo "TG_CHAT_ID=${{ secrets.TG_CHAT_ID }}" >> .env
+          echo "ADMIN_USER=${{ secrets.ADMIN_USER }}" >> .env
+          echo "ADMIN_PASS=${{ secrets.ADMIN_PASS }}" >> .env
+          echo "RECAPTCHA_SITE_KEY=${{ secrets.RECAPTCHA_SITE_KEY }}" >> .env
+          echo "RECAPTCHA_SECRET=${{ secrets.RECAPTCHA_SECRET }}" >> .env
+
+      - name: Final step
+        run: |
+          echo "Ok! CI/CD pipeline executed successfully."
